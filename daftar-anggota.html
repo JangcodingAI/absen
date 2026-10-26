@@ -189,7 +189,7 @@ const refresh=()=>{load();accent();me?home():(fillSel(),regStatus())};addEventLi
 /* ===== Sinkron online (Firebase Realtime Database) =====
    Isi alamat database pada CLOUD, harus SAMA di file admin dan file pekerja.
    Kosongkan untuk mode lokal (satu perangkat). */
-const CLOUD='https://console.firebase.google.com/u/6/project/jang-code-ai/database/jang-code-ai-default-rtdb/data/~2F';
+const CLOUD='https://jang-code-ai-default-rtdb.firebaseio.com';
 const cdb={on:!!CLOUD.trim(),
   u(p){return CLOUD.trim().replace(/\/+$/,'')+'/'+p+'.json'},
   async get(p,q){const r=await fetch(this.u(p)+(q||''),{cache:'no-store'});if(!r.ok)throw new Error('HTTP '+r.status);return (await r.json())||{}},
